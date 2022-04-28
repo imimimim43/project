@@ -239,4 +239,6 @@ public static int capacity[][]; // 간선의 용량을 저장하기 위한 배�
 
 이므로 flow가 적고, 간선이 많은 경우에는 포드-풀커슨의 알고리즘이 효율적일 수 있다는 것을 알 수 있다.
 
+<br>
+
 코드 참고 링크 : (https://gseok.gitbooks.io/algorithm/content/b124-d2b8-c6cc-d06c-d50c-b85c-c6b0/d3ec-b4dc-d480-cee4-c2a828-ford-fulkerson-c560-b4dc-baac-b4dc-ce74-d50428-edmonds-karp.html)
