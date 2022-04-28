@@ -88,18 +88,7 @@
 
 ## 코드 구현
 
-```
-queue = new PriorityQueue<Node>(100, new Freq_ch_Node());
-int n = 0;
-		
-for(Character c : dictionary.keySet())
-{
-	Node temp = new Node(); //temp라는 새로운 노드를 만들어
-	temp.ch = c; //노드에서 문자에 해당하는 것을 위에서 만든 dictionary에서 하나하나 대입하고
-	temp.freq = dictionary.get(c); //그 대입한 문자의 빈도수를 또 하나하나 대입하여
-	queue.add(temp); //위에서 새로 만든 큐에 더한다.
-	n++;
-}
+
 ```
 
 public static int capacity[][];
