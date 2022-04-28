@@ -225,5 +225,19 @@ public static int capacity[][];
 	
 ```
 
+## 포드-풀커슨 알고리즘 성능 분석
+- 포드-풀커슨 알고리즘은 dfs방식으로 증가 경로를 찾는데, 에드몬드-카프 알고리즘은 비슷한 방식이지만 bfs방식으로 증가 경로를 찾는다.
+
+
+![ford4](https://user-images.githubusercontent.com/102197100/165823602-9d9fc751-9433-48ac-8278-adbce946203c.PNG)
+
+- 위 그림을 보면 dfs는 2000번의 탐색으로 최대 유량을 찾지만, bfs는 2번의 탐색으로 최대 유량을 찾아낸다. 이렇게 보면 에드몬드-카프 알고리즘이 더 효율적으로 보일 수 있느나
+
+> 포드-풀커슨의 알고리즘 시간복잡도 : O( (|E|+|V|) * F )
+> 애드몬드-카프의 알고리즘 시간복잡도는 O( |V| * (|E|^2) )
+
+(E: 간선, V: 정점, F: 최대 유량)
+
+이므로 flow가 적고, 간선이 많은 경우에는 포드-풀커슨의 알고리즘이 효율적일 수 있다는 것을 알 수 있다.
 
 코드 참고 링크 : (https://gseok.gitbooks.io/algorithm/content/b124-d2b8-c6cc-d06c-d50c-b85c-c6b0/d3ec-b4dc-d480-cee4-c2a828-ford-fulkerson-c560-b4dc-baac-b4dc-ce74-d50428-edmonds-karp.html)
