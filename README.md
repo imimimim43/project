@@ -49,6 +49,7 @@
   
 <li>소스에서 싱크로 유량을 더 보낼 수 있는 경로를 찾아 유량 보내기를 반복.
 </ol>
-<br>
-![ford2](https://user-images.githubusercontent.com/102197100/165805576-2f7a7e27-f2f7-458e-ac33-b1a42b6948ad.png)
+
+![image](https://user-images.githubusercontent.com/102197100/165806071-132388e6-e9e5-402b-8244-7be063d71fda.png)
+
 
