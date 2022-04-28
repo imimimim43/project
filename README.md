@@ -88,6 +88,25 @@
 
 ## 코드 구현
 
+■ 필요한 요소
+<br>
+- 그래프를 표현하는 배열
+- path를 저장하기 위한 배열
+- edge(간선)의 정보를 저장하기 위한 배열 : capacity, flow
+- dfs에서 방문 정보를 확인하기 위한 배열
+
+**O 코드에 쓰일 배열 선언 **
+```
+
+public static int capacity[][]; // 간선의 용량을 저장하기 위한 배열
+    public static int flow[][]; // 간선의 유량을 저장하기 위한 배열
+    public static int path[]; // 
+    public static boolean visited[];
+    public static LinkedList<Integer> graph[];
+
+```
+
+## **최종 코드 구현**
 
 ```
 
@@ -146,3 +165,6 @@ public static int capacity[][];
     }
 	
 ```
+
+
+코드 참고 링크 : (https://gseok.gitbooks.io/algorithm/content/b124-d2b8-c6cc-d06c-d50c-b85c-c6b0/d3ec-b4dc-d480-cee4-c2a828-ford-fulkerson-c560-b4dc-baac-b4dc-ce74-d50428-edmonds-karp.html)
