@@ -95,7 +95,7 @@
 - edge(간선)의 정보를 저장하기 위한 배열 : capacity, flow
 - dfs에서 방문 정보를 확인하기 위한 배열
 
-**O 코드에 쓰일 배열 선언 **
+ **O 코드에 쓰일 배열 선언 **
 ```
 
 public static int capacity[][]; // 간선의 용량을 저장하기 위한 배열
