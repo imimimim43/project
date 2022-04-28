@@ -85,3 +85,73 @@
 <li>더 이상 증가 경로가 발견 되지 않을 때까지 반복한다.</li>
 </ol>
 <br>
+
+## 코드 구현
+
+```
+queue = new PriorityQueue<Node>(100, new Freq_ch_Node());
+int n = 0;
+		
+for(Character c : dictionary.keySet())
+{
+	Node temp = new Node(); //temp라는 새로운 노드를 만들어
+	temp.ch = c; //노드에서 문자에 해당하는 것을 위에서 만든 dictionary에서 하나하나 대입하고
+	temp.freq = dictionary.get(c); //그 대입한 문자의 빈도수를 또 하나하나 대입하여
+	queue.add(temp); //위에서 새로 만든 큐에 더한다.
+	n++;
+}
+```
+public static int capacity[][];
+    public static int flow[][];
+    public static int path[]; // 
+    public static boolean visited[];
+    public static LinkedList<Integer> graph[];
+
+    public static boolean dfs(int start) {
+        if (start == Sink) {
+            return true;
+        }
+
+        visited[start] = true;
+        LinkedList<Integer> nexts = graph[start];
+        for (int next: nexts) {
+            if ( !visited[next] && capacity[start][next] - flow[start][next] > 0) {
+                path[next] = start;
+
+                if (dfs(next)) { // 경로를 끝까지 찾으면 탈출, 아니면, 끝까지 찾기 재시도
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+  
+  public static int FordFulkerson() {
+        int total = 0;
+        while (dfs(Source)) { // dfs로 경로 찾기(증가경로), 경로가 더이상 없으면 종료임.
+            // 찾은 경로에서 차단 간선 찾기 min (capacity[u][v] - flow[u][v])
+            // 결국 의미는 경로에서 흘릴수 있는 최대의 유량(flow)을 찾기
+            int flowNum = Integer.MAX_VALUE;
+            for(int i = Sink; i != Source; i = path[i]) {
+                int from = path[i];
+                int to = i;
+                flowNum = Math.min(flowNum, (capacity[from][to]) - flow[from][to]);
+            }
+            // 찾은 경로에 유량을 흘려보내기, 역방향도 반드시!!!!
+            for(int i = Sink; i != Source; i = path[i]) {
+                int from = path[i];
+                int to = i;
+
+                flow[from][to] += flowNum;
+                flow[to][from] -= flowNum;
+            }
+
+            total += flowNum;
+
+            // 찾은 경로를 초기화해서 dfs로 경로 찾기를 Source > Sink 까지 다시 할 수 있게 함.
+            Arrays.fill(path, -1);
+            Arrays.fill(visited, false);
+        }
+        return total;
+    }
+```
